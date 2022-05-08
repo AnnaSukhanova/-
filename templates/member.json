@@ -1,0 +1,34 @@
+{
+  "members": [
+    {
+      "name": "Jack",
+      "surname": "Herley",
+      "photo": "/static/img/al1.png",
+      "prof": [
+        "астеролог",
+        "повар",
+        "художник планет"
+      ]
+    },
+    {
+      "name": "Ilon",
+      "surname": "Mask",
+      "photo": "/static/img/al2.jpg",
+      "prof": [
+        "уборщик",
+        "специалист по сантехнике",
+        "юморист"
+
+      ]
+    },
+    {
+      "name": "Biba",
+      "surname": "Boba",
+      "photo": "/static/img/al3.jpg",
+      "prof": [
+        "программист",
+        "специалист по кораблю"
+      ]
+    }
+  ]
+}

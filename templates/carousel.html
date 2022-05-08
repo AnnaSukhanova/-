@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+    <div align="center" id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            {% for im in images %}
+            <li data-target="#carouselIndicators" data-slide-to="{{ loop.index - 1}}" {% if loop.first %} class="active" {% endif %}></li>
+            {% endfor %}
+        </ol>
+        <div class="carousel-inner">
+            {% for image in images %}
+            <div {% if loop.first %} class="carousel-item active" {% else %} class="carousel-item" {% endif %}>
+                <img src={{ image }}  alt="error">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<form action="" method="POST" enctype="multipart/form-data" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.image.label }}<br>
+        {{ form.image(class="form-control") }}<br>
+        {% for error in form.image.errors %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+</form>
+{% endblock %}
